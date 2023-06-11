@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid black; */
+}
+
+:root {
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --gradient-1-1: hsl(0, 70%, 92%);
+    --gradient-1-2: hsl(0, 71%, 82%);
+    --gradient-2-1: hsl(0, 80%, 86%);
+    --gradient-2-2: hsl(0, 74%, 74%);
+}
+
+body {
+    font-size: 16px;
+    font-family: "Josefin Sans";
+    background-image: url("./images/bg-pattern-desktop.svg");
+    background-size: cover;
+}
+
+div.main {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "logo logo logo img img"
+                        "content content content img img"
+                        "content content content img img"
+                        "content content content img img"
+                        "content content content img img";
+}
+
+div.logo {
+    grid-area: logo;
+    padding: 4em 8em 2em;
+}
+
+div.content {
+    grid-area: content;
+    padding: 3em 8em;
+    padding-top: 0;
+}
+
+div.img {
+    grid-area: img;
+    background-image: url(./images/hero-desktop.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 40vw;
+}
+
+.heading h1{
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    font-weight: 400;
+    color: var(--Dark-Grayish-Red);
+    margin-bottom: 0.4em;
+}
+
+.heading h1 span {
+    color: var(--Desaturated-Red);
+    font-weight: 300;
+}
+
+div.paragraph p {
+    font-family: "Josefin Sans";
+    word-spacing: 0.4rem;
+    color: var(--Desaturated-Red);
+    font-weight: 400;
+    line-height: 1.7rem;
+    overflow-wrap: break-word;
+}
+
+.form div{
+    margin-top: 2em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 2em;
+    width: 37vw;
+}
+
+.form-input {
+    width: 37vw;
+    padding: 1.5em 2em;
+    border: 1px solid var(--Desaturated-Red);
+    border-radius: 2em;
+}
+
+.form-input:focus {
+    outline: 0;
+}
+
+.label {
+    display: none;
+    transform: translateX(-500%);
+}
+
+.error {
+    display: none;
+    color: var(--Soft-Red);
+    padding: 1em 2em;
+}
+
+button {
+    position: absolute;
+    width: 7vw;
+    padding: 1.3em 2em;
+    border-radius: 2em;
+    cursor: pointer;
+    background-image: linear-gradient(hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: none;
+    box-shadow: -1px 5px 12px var(--Desaturated-Red);
+    transition: 1s all ease-in-out;
+}
+
+button:hover {
+    background-image: linear-gradient(var(--gradient-1-1),var(--gradient-1-2));
+}
+
+::placeholder {
+    color: hsla(0, 36%, 70%, 0.4);
+    font-size: 1.1rem;
+    font-family: "Josefin Sans";
+}
+
+/* TABLET design */
+@media (max-width:1200px){
+    .label {
+        display: none;
+        transform: translateX(-400%);
+    }
+}
+
+@media (max-width:1100px){
+    .heading h1{
+        font-size: 4.5rem;
+        letter-spacing: 1rem;
+    }
+
+    div.content {
+        padding: 3em 7.5em;
+        padding-top: 0;
+    }
+
+    div.logo {
+        padding: 4em 7.5em 2em;
+    }
+
+    .form-input {
+        padding: 1.4em 2em;
+    }
+
+    button.submit {
+        padding: 1.25em 2em;
+        width: 8vw;
+    }
+
+    .label {
+        display: none;
+        transform: translateX(-370%);
+    }
+}
+
+@media (max-width:1000px){
+    .heading h1{
+        font-size: 4rem;
+        letter-spacing: 1rem;
+    }
+
+    div.content {
+        padding: 3em 7em;
+        padding-top: 0;
+    }
+
+    div.logo {
+        padding: 4em 7em 2em;
+    }
+
+    .form-input {
+        padding: 1.3em 2em;
+    }
+
+    button.submit {
+        padding: 1.15em 2em;
+        width: 8vw;
+    }
+
+    .label {
+        display: none;
+        transform: translateX(-350%);
+    }
+}
+
+@media (max-width:900px){
+    .heading h1{
+        font-size: 3rem;
+        letter-spacing: 1rem;
+    }
+
+    div.content {
+        padding: 3em 6em;
+        padding-top: 0;
+    }
+
+    div.logo {
+        padding: 4em 6em 2em;
+    }
+
+    .form-input {
+        padding: 1.2em 2em;
+    }
+
+    button.submit {
+        padding: 1em 2em;
+        width: 8vw;
+    }
+
+    .label {
+        display: none;
+        transform: translateX(-320%);
+    }
+}
+
+@media (max-width:800px){
+    .heading h1{
+        font-size: 2rem;
+        letter-spacing: 1rem;
+    }
+
+    div.content {
+        padding: 3em 5em;
+        padding-top: 0;
+    }
+
+    div.logo {
+        padding: 4em 5em 2em;
+    }
+
+    .form-input {
+        padding: 1.1em 2em;
+    }
+
+    button.submit {
+        padding: 0.9em 2em;
+        width: 9vw;
+    }
+
+    .label {
+        display: none;
+        transform: translateX(-320%);
+    }
+}
+
+/* MOBILE design*/
+@media(max-width:700px){
+    div.main {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-areas:"logo"
+                            "img"
+                            "img"
+                            "img"
+                            "content"
+                            "content"
+                            "content"
+                            "content";
+    }
+
+    div.img {
+        background-image: url(./images/hero-mobile.jpg);
+        background-size: cover;
+        width: 100vw;
+        height: 37.5vh;
+    }
+
+    div.logo {
+        padding: 1em;
+        display: grid;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    div.logo img {
+        transform: scale(0.7);
+    }
+
+    .heading h1{
+        font-size: 2.5rem;
+        letter-spacing: 1rem;
+        font-weight: 600;
+    }
+
+    div.content {
+        padding: 3em 2em;
+        padding-top: 2em;
+        text-align: center;
+    }
+
+    div.paragraph p {
+        font-size: 0.9rem;
+        word-spacing: 0;
+        line-height: 1.4rem;
+        padding: 0 1em;
+    }
+
+    ::placeholder {
+        font-size: 0.9rem;
+    }
+
+    .form div{
+        width: 65vw;
+    }
+
+    .form-input {
+        width: 65vw;
+    }
+
+    .form {
+        display: grid;
+        justify-content: center;
+    }
+
+    button.submit {
+        width: 13vw;
+    }
+
+    .label {
+        display: none;
+        transform: translateX(-390%);
+    }
+}
+
+@media(max-width:550px){
+    button.submit {
+        width: 13vw;
+    }
+
+    .label {
+        display: none;
+        transform: translateX(-310%);
+    }
+}
+
+@media(max-width:500px){
+    button.submit {
+        width: 14vw;
+    }
+
+    .label {
+        display: none;
+        transform: translateX(-320%);
+    }
+}
+@media(max-width:450px){
+    button.submit {
+        width: 15vw;
+    }
+
+    .label {
+        display: none;
+        transform: translateX(-330%);
+    }
+}
+
+@media(max-width:400px){
+    button.submit {
+        width: 16vw;
+    }
+
+    .label {
+        display: none;
+        transform: translateX(-310%);
+    }
+}
